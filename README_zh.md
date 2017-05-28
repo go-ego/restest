@@ -1,16 +1,17 @@
 # RESTest
 
-## Install ego:
+## 安装 ego:
 ```
 go get -u github.com/go-ego/ego  
 ```
 
-## Install [Build-tools](https://github.com/go-ego/re)
+## 安装 [Build-tools](https://github.com/go-ego/re)
 ```
 go get -u github.com/go-ego/re 
 ```
 ### re new 
-To create a new Ego web application
+
+新建 ego web 项目 my-webapp
 
 ```
 $ re new my-webapp
@@ -18,12 +19,12 @@ $ re new my-webapp
 
 ### re run
 
-To run the application we just created, you can navigate to the application folder and execute:
+运行 my-webapp:
 ```
 $ cd my-webapp && re run
 ```
 
-## Test restful api:
+## 测试 restful 接口:
 ```Go
 
 package main
@@ -44,20 +45,19 @@ func main() {
 
   strUrl := httpUrl + "/test/list"
   paramMap := ego.Map{
-    "lon":  "10.1010101", // http parameter
+    "lon":  "10.1010101", // http 参数
     "lat":  "20.202020",
     "type": "1",
   }
-  router.TestHtml(strUrl, paramMap) // http url, http parameter
+  router.TestHtml(strUrl, paramMap) // http url, http 参数
 
   router.Run(":3100")
 }
 
 ```
+生成访问路径: http://127.0.0.1:3000/t/list
 
-Generate access path: http://127.0.0.1:3000/t/list
-
-## Test the file upload with the restful api:
+## 测试带文件上传的 restful 接口:
 ```Go
 
 package main
@@ -78,16 +78,15 @@ func main() {
 
   strUrl := httpUrl + "/test/list"
   paramMap := ego.Map{
-    "lon":  "10.1010101", // http parameter
-    "lat":  "20.202020",
+    "lon":  "10.1010101", // http 参数
+    "lat":  "20.202020", 
     "type": "1",
   }
 
-  router.TestFile(fileUrl, paranMap, "./file.go", "upfile") // http url, http parameter, file path, upload file parameters
+  router.TestFile(strUrl, paranMap, "./file.go", "upfile") // http url, http 参数, 文件路径, 上传文件参数
 
   router.Run(":3100")
 }
 
 ```
-
-Generate access path: http://127.0.0.1:3000/t/list
+生成访问路径: http://127.0.0.1:3000/t/list
