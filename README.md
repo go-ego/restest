@@ -1,5 +1,7 @@
 # RESTest
 
+[简体中文](https://github.com/go-ego/RESTest/blob/master/README_zh.md)
+
 ## Install ego:
 ```
 go get -u github.com/go-ego/ego  
